@@ -1,0 +1,17 @@
+# Maintainer: Matthias Blaser <git@mooch.ch>
+pkgname=aareguru-cli
+pkgver=0.3.4
+pkgrel=1
+pkgdesc="aare.guru CLI"
+arch=('x86_64')
+url="https://github.com/gexclaude/aaregurucli"
+license=('GPL')
+options=('!strip')
+source=("https://github.com/gexclaude/aaregurucli/releases/download/v$pkgver/aareguru_${pkgver}_linux_amd64.tar.gz")
+sha256sums=('775bb4939b4b02154b0aa16c55f871bda4ba45aef8cad4caea8b8ba003076d98')
+
+package() {
+	BINDIR=$pkgdir/usr/bin
+	mkdir -p $BINDIR
+	cp -p aareguru $BINDIR
+}
